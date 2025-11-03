@@ -2,7 +2,7 @@ package loopin.projectbook.logic.parser.project;
 
 import static java.util.Objects.requireNonNull;
 import static loopin.projectbook.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_NAME;
+import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_PROJECT;
 
 import loopin.projectbook.commons.core.index.Index;
 import loopin.projectbook.logic.commands.projectcommands.ProjectDeleteCommand;
@@ -25,10 +25,10 @@ public class ProjectDeleteCommandParser implements Parser<ProjectDeleteCommand> 
     public ProjectDeleteCommand parse(String args) throws ParseException {
         requireNonNull(args);
 
-        ArgumentMultimap map = ArgumentTokenizer.tokenize(args, PREFIX_NAME);
+        ArgumentMultimap map = ArgumentTokenizer.tokenize(args, PREFIX_PROJECT);
 
-        if (map.getValue(PREFIX_NAME).isPresent()) {
-            String name = map.getValue(PREFIX_NAME).get().trim();
+        if (map.getValue(PREFIX_PROJECT).isPresent()) {
+            String name = map.getValue(PREFIX_PROJECT).get().trim();
             if (name.isEmpty()) {
                 throw usageError();
             }

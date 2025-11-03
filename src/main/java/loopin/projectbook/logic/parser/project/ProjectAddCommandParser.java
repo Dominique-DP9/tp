@@ -1,7 +1,8 @@
 package loopin.projectbook.logic.parser.project;
 
 import static loopin.projectbook.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static loopin.projectbook.logic.parser.CliSyntax.*;
+import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
+import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_PROJECT;
 
 import java.util.stream.Stream;
 
@@ -29,13 +30,13 @@ public class ProjectAddCommandParser implements Parser<AddProjectCommand> {
      */
     public AddProjectCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_DESCRIPTION);
-        if (!arePrefixesPresent(argMultimap, PREFIX_NAME) || !arePrefixesPresent(argMultimap, PREFIX_DESCRIPTION)) {
+                ArgumentTokenizer.tokenize(args, PREFIX_PROJECT, PREFIX_DESCRIPTION);
+        if (!arePrefixesPresent(argMultimap, PREFIX_PROJECT) || !arePrefixesPresent(argMultimap, PREFIX_DESCRIPTION)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddProjectCommand.MESSAGE_USAGE));
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_DESCRIPTION);
-        ProjectName name = ParserUtil.parseProjectName(argMultimap.getValue(PREFIX_NAME).get());
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_PROJECT, PREFIX_DESCRIPTION);
+        ProjectName name = ParserUtil.parseProjectName(argMultimap.getValue(PREFIX_PROJECT).get());
         Description description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
 
         Project project = new Project(name, description);
