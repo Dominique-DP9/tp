@@ -24,14 +24,14 @@ public class ProjectDeleteCommandParserTest {
     @Test
     public void parse_nameForm_success() throws Exception {
         // tests: " n/Website Revamp  "
-        ProjectDeleteCommand cmd = parser.parse(" n/Website Revamp  ");
+        ProjectDeleteCommand cmd = parser.parse(" project/Website Revamp  ");
         assertNotNull(cmd);
     }
 
     @Test
     public void parse_blankName_failure() {
         // tests: "n/   " -> fail
-        assertThrows(ParseException.class, () -> parser.parse("n/   "));
+        assertThrows(ParseException.class, () -> parser.parse("project/   "));
     }
 
     @Test

@@ -34,10 +34,10 @@ public class ProjectDeleteCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a project.\n"
             + "Formats:\n"
             + "project delete INDEX\n"
-            + "project delete " + PREFIX_PROJECT + "/PROJECT_NAME\n"
+            + "project delete " + PREFIX_PROJECT + "PROJECT_NAME\n"
             + "Examples:\n"
             + " " + COMMAND_WORD + " " + SUBCOMMAND + " 2\n"
-            + " " + COMMAND_WORD + " " + SUBCOMMAND + " " + PREFIX_PROJECT + "/Website Revamp";
+            + " " + COMMAND_WORD + " " + SUBCOMMAND + " " + PREFIX_PROJECT + "Website Revamp";
 
     public static final String MESSAGE_DELETE_PROJECT_SUCCESS = "Deleted project: %s";
 
