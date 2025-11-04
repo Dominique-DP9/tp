@@ -21,7 +21,7 @@ import loopin.projectbook.model.project.Project;
  * Usage:
  * {@code
  * project delete INDEX
- * project delete n/NAME
+ * project delete project/PROJECT_NAME
  * }
  *
  * Cascading cleanup (e.g., removing back-references from members) should be handled by
