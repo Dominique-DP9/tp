@@ -2,7 +2,7 @@ package loopin.projectbook.logic.commands.projectcommands;
 
 import static java.util.Objects.requireNonNull;
 import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_DESCRIPTION;
-import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_NAME;
+import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_PROJECT;
 
 import loopin.projectbook.commons.util.ToStringBuilder;
 import loopin.projectbook.logic.Messages;
@@ -24,10 +24,10 @@ public class AddProjectCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + " "
             + SUBCOMMAND + ": Adds a project to the project book. \n"
             + "Parameters: "
-            + PREFIX_NAME + "NAME "
+            + PREFIX_PROJECT + "PROJECT_NAME "
             + PREFIX_DESCRIPTION + "DESCRIPTION "
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_NAME + "Beach Cleanup "
+            + SUBCOMMAND + " " + PREFIX_PROJECT + "Beach Cleanup "
             + PREFIX_DESCRIPTION + "Annual cleanup at East Coast ";
 
     public static final String MESSAGE_SUCCESS = "New project added: %1$s";

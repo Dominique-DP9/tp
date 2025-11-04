@@ -3,6 +3,7 @@ package loopin.projectbook.logic.commands.projectcommands;
 import static java.util.Objects.requireNonNull;
 import static loopin.projectbook.logic.Messages.MESSAGE_INVALID_PROJECT_DISPLAYED_INDEX;
 import static loopin.projectbook.logic.Messages.MESSAGE_NO_PROJECT;
+import static loopin.projectbook.logic.parser.CliSyntax.PREFIX_PROJECT;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,10 +34,10 @@ public class ProjectDeleteCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a project.\n"
             + "Formats:\n"
             + "project delete INDEX\n"
-            + "project delete n/NAME\n"
+            + "project delete " + PREFIX_PROJECT + "/PROJECT_NAME\n"
             + "Examples:\n"
-            + "  " + COMMAND_WORD + " 2\n"
-            + "  " + COMMAND_WORD + " n/Website Revamp";
+            + " " + COMMAND_WORD + " " + SUBCOMMAND + " 2\n"
+            + " " + COMMAND_WORD + " " + SUBCOMMAND + " " + PREFIX_PROJECT + "/Website Revamp";
 
     public static final String MESSAGE_DELETE_PROJECT_SUCCESS = "Deleted project: %s";
 
