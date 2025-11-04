@@ -319,10 +319,13 @@ Adds a project to the project book.
 
 Deletes the specified project from the project book.
 
-**Format:** `project delete project/PROJECT_NAME`
+**Formats:** 
+* `project delete PROJECT_INDEX`
+* `project delete project/PROJECT_NAME`
 
-**Example:**
-`project delete project/Fundraising Drive`
+**Examples:**
+* `project delete 3` deletes the 3rd project.
+* `project delete project/Fundraising Drive` deletes the project named "Fundraising Drive".
 
 <box type="info" seamless>
 
@@ -345,9 +348,7 @@ Views the summary of an existing project and its participants.
 **Format:** `project view project/PROJECT_NAME`
 
 **Example:**
-`project view project/Beach Cleanup`
-* Lists the name and description of the project.
-* Lists all contacts (volunteers, team members, organisation members) assigned to it.
+`project view project/Beach Cleanup` lists the name and description of the project, and all contacts (volunteers, team members, organisation members) assigned to it.
 
 ---
 ### `project find`: Finding Projects
@@ -376,8 +377,8 @@ Assigns a specified volunteer, team member, or organisation member to a project.
 * `project assign INDEX project/PROJECT_NAME`
 * `project assign n/NAME project/PROJECT_NAME`
 
-* Assigns the person at the specified `INDEX`, or with the specified `NAME`, to the specified `PROJECT`.
-* The `INDEX` refers to the index number shown in the displayed person list. It **must be a positive integer** (1, 2, 3, …).
+**Details:**
+
 * The `NAME` search is **case-insensitive**.
 * When you view the project details (`project view`), the assigned person will show up in its details.
 
@@ -394,6 +395,8 @@ Removes a specified volunteer, team member, or organisation member from a projec
 * `project remove INDEX project/PROJECT_NAME`
 * `project remove n/NAME project/PROJECT_NAME`
 
+**Details:**
+
 * Removes the person at the specified `INDEX`, or with the specified `NAME`, from the specified `PROJECT`.
 * The `INDEX` refers to the index number shown in the displayed person list. It **must be a positive integer** (1, 2, 3, …).
 * The `NAME` search is **case-insensitive**.
@@ -408,7 +411,7 @@ Removes a specified volunteer, team member, or organisation member from a projec
 
 Exits the program.
 
-Format: `exit`
+**Format:** `exit`
 
 ---
 ### Saving the data
